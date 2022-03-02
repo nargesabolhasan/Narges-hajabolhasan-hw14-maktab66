@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Button from './Button';
-
+import './counterCss.css'
 export default class Counter extends Component {
     constructor(props) {
         super(props);
         this.state = {
             counter: 0
         };
-        this.increase=this.increase.bind(this)
-        this.decrease=this.decrease.bind(this)
+        this.increase = this.increase.bind(this)
+        this.decrease = this.decrease.bind(this)
     };
     increase() {
         this.setState({
@@ -28,8 +28,10 @@ export default class Counter extends Component {
         return (
             <div>
                 <h1>Current Count: {this.state.counter}</h1>
-                <Button clickHandler={this.increase} title={'increase'}/>
-                <Button clickHandler={this.decrease} title={'decrease'}/>
+                <div className="button-wrapper">
+                    <Button clickHandler={this.increase} title={'increase'} />
+                    <Button clickHandler={this.decrease} title={'decrease'} />
+                </div>
             </div>
         );
     }
